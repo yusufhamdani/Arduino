@@ -1,0 +1,25 @@
+#define A 2
+#define B 3
+#define C 4
+#define D 5
+
+int analogPin = A0; // potentiometer wiper (middle terminal) connected to analog pin 3
+     int val;               // outside leads to ground and +5V
+
+void setup() {
+  pinMode(A, OUTPUT);
+pinMode(B, OUTPUT);
+pinMode(C, OUTPUT);
+pinMode(D, OUTPUT);
+  Serial.begin(9600);           //  setup serial
+}
+
+void loop() {
+  digitalWrite(A, 1);
+  digitalWrite(B, 0);
+  digitalWrite(C, 0);
+  digitalWrite(D, 0);
+  val = analogRead(A0);  // read the input pin
+  Serial.println(val);          // debug value
+  delay(300);
+}
