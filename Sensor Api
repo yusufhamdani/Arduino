@@ -1,0 +1,18 @@
+int analogpin = A0; //set pin input
+int val = 0; // deklarasi nilai variable awal = 0
+void setup() {
+  Serial.begin(9600);
+  pinMode(2,OUTPUT); //output pada pin digital 2
+}
+void loop() {
+ val = analogRead(analogpin); //nilai = input dari sensor
+ Serial.println(val); //biar continue
+ //delay(100);
+
+ if(val<100){
+  digitalWrite(2,HIGH); //led on pin 2
+ }
+ else{
+  digitalWrite(2,LOW);
+ }
+}
